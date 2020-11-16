@@ -21,16 +21,18 @@ import com.example.Arvostelu.model.CategoryRepository;
 @Controller
 public class ArvosteluController {
 
+	 @Autowired
+	    private ArvosteluRepository repository;
+
+	    @Autowired
+	    private CategoryRepository crepository;
+	
 	 @RequestMapping(value="/login")
 	    public String login() {	
 	        return "login";
 	    }	
 		
-	    @Autowired
-	    private ArvosteluRepository repository;
-
-	    @Autowired
-	    private CategoryRepository crepository;
+	   
 
 
 	    @RequestMapping(value="/api", method = RequestMethod.GET)
