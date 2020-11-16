@@ -27,19 +27,12 @@ public class ArvosteluController {
 	    @Autowired
 	    private CategoryRepository crepository;
 	
-	 @RequestMapping(value="/login")
-	    public String login() {	
+	    @RequestMapping(value= {"/", "/login"}, method = RequestMethod.GET)
+	    public String login() {
 	        return "login";
-	    }	
+	    }
 		
-	   
-
-
-	    @RequestMapping(value="/api", method = RequestMethod.GET)
-	    public @ResponseBody List<Arvostelu> studentListRest() {	
-	        return (List<Arvostelu>) repository.findAll();
-	    }    
-	    
+	  
 	    @RequestMapping(value="/arvostelut")
 	    public String arvostelut(Model model) {
 	        model.addAttribute("arvostelu", repository.findAll());
