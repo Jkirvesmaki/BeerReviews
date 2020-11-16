@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="userTable")
+
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
