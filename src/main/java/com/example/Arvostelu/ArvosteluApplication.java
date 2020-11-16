@@ -36,8 +36,11 @@ public class ArvosteluApplication {
 			
 				arepository.save(new Arvostelu("Karhu", "Namskis", 5.0 ,crepository.findByName("Lager").get(0)));
 				log.info("fetch all reviews");
-				urepository.save(new User("1", "joonas2", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "ADMIN"));
-				urepository.save(new User("2", "joonas1", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "user"));
+				User user1 = new User("1", "joonas2", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "ADMIN");
+				User user2 = new User("2", "joonas1", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "user");
+				urepository.deleteAll();
+				  urepository.save(user1);
+		            urepository.save(user2);
 				for (Arvostelu arvostelu : arepository.findAll()) {
 					log.info(arvostelu.toString());
 				}
