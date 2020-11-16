@@ -15,7 +15,7 @@ import net.minidev.json.annotate.JsonIgnore;
 @Entity
 public class Arvostelu {
 @Id
-@GeneratedValue(strategy = GenerationType.AUTO)
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private long id;
 private String name;
 private String description;
