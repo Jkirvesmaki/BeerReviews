@@ -13,7 +13,6 @@ import net.minidev.json.annotate.JsonIgnore;
 
 
 @Entity
-@Table(name="usertable")
 public class Arvostelu {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
