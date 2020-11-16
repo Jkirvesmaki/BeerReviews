@@ -42,11 +42,7 @@ public class ArvosteluController {
 	    public String arvostelut(Model model) {
 	        model.addAttribute("arvostelu", repository.findAll());
 	        return "arvostelut";
-	    }
-	    @RequestMapping(value="/")
-	    public String arvosteluja(Model model) {
-	        model.addAttribute("arvostelu", repository.findAll());
-	        return "arvostelut";
+	
 	    }
 	    @RequestMapping(value="/api/{id}", method = RequestMethod.GET)
 	    public @ResponseBody Optional<Arvostelu> findArvosteluRest(@PathVariable("id") Long Id) {    
