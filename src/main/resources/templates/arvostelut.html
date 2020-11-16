@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Arvostelut</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Arvostelut</h1>
+    <table class="table table-striped"> 
+		<tr>
+		    <th>nimi</th>
+		    <th>kuvaus</th>
+		    <th>arvosana</th>
+
+		        <th>Category</th>
+		        </div>
+	<div class="col-md-4">
+		   <h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
+		   </div>
+		   <div class="col-md-1" style="padding:20px 0; text-align: right">
+		   			<form th:action="@{/logout}" method="post" >
+		   			<input type="submit" value="Sign Out"
+		   			class="btn btn-warning"/>
+		   			</form>
+		   			<br></br>
+		    <th></th>
+		    
+		</tr>  
+    	<tr th:each = "arvostelu : ${arvostelu}">
+    		<td th:text="${arvostelu.name}"></td> 
+    		<td th:text="${arvostelu.description}"></td>
+    		<td th:text="${arvostelu.score}"></td>  		
+    	
+    		 <td th:text="${arvostelu.category.name}"></td> 
+
+
+			
+    		<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${arvostelu.id})}"  class="btn btn-danger">Delete</a></td>    		
+    		<td><a th:href="@{/modify/{id}(id=${arvostelu.id})}"  class="btn btn-warning">Modify</a></td>    
+    	</tr>
+     </table> 	
+     <a href="/add" class="btn btn-success">Add Book</a>
+</body>
+</html>

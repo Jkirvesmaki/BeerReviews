@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Olut Arvostelut</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body>
+	<h1>Lisaa arvostelu</h1>
+	<div>
+		<form th:object="${arvostelu}" th:action="@{save}" action="#" method="post">
+			<label for="nimi">nimi</label> <input type="text" id="nimi"
+				th:field="*{name}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="description">kuvaus</label> <input type="text" id="isbn"
+				th:field="*{description}" /><br />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="score">arvosana</label> <input type="text" th:field="*{score}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="catlist">Category</label> <select id="catlist"
+				th:field="*{category}" class="form-control">
+				<option th:each="category: ${categories}"
+					th:value="${category.categoryId}" th:text="${category.name}"></option>
+			</select></br> <input class="btn btn-success" type="submit" value="Save"></input>
+		</form>
+	</div>
+</body>
+</html>
