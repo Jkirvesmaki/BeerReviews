@@ -15,6 +15,7 @@ import net.minidev.json.annotate.JsonIgnore;
 @Entity
 public class Arvostelu {
 @Id
+@Column(name= "id")
 @GeneratedValue(strategy=GenerationType.AUTO)
 private long id;
 private String name;
