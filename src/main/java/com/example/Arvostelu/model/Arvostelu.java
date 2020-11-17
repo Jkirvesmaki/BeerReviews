@@ -17,10 +17,10 @@ public class Arvostelu {
 @Id
 @Column(name= "id")
 @GeneratedValue(strategy=GenerationType.AUTO)
-private long id;
+private Long id;
 private String name;
 private String description;
-private double score;
+private Double score;
 
 @ManyToOne
 @JsonIgnore
@@ -33,7 +33,7 @@ public Arvostelu() {
 
 
 
-public Arvostelu(String name, String description, double arvosana, Category category) {
+public Arvostelu(String name, String description, Double arvosana, Category category) {
 	super();
 
 	this.name = name;
@@ -47,7 +47,7 @@ public long getId() {
 
 	return id;
 }
-public void setId(long id) {
+public void setId(Long id) {
 	this.id = id;
 }
 public String getName() {
@@ -65,7 +65,7 @@ public void setDescription(String description) {
 public double getScore() {
 	return score;
 }
-public void setScore(double score) {
+public void setScore(Double score) {
 	this.score = score;
 }
 

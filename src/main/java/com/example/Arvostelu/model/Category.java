@@ -37,7 +37,7 @@ public class Category {
 		return categoryId;
 	}
 
-	public void setCategoryId(long categoryId) {
+	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
 	}
 
@@ -49,7 +49,7 @@ public class Category {
 		this.name = name;
 	}
 
-	public Category(long categoryId, String name) {
+	public Category(Long categoryId, String name) {
 		super();
 		this.categoryId = categoryId;
 		this.name = name;
