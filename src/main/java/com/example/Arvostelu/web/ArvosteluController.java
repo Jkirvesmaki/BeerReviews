@@ -37,10 +37,7 @@ public class ArvosteluController {
 	    public String arvostelut(Model model) {
 	        model.addAttribute("arvostelu", repository.findAll());
 	        return "arvostelut";
-<<<<<<< HEAD
-	
-=======
->>>>>>> parent of 4e920a5... Update ArvosteluController.java
+
 	    }
 	    @RequestMapping(value="/api/{id}", method = RequestMethod.GET)
 	    public @ResponseBody Optional<Arvostelu> findArvosteluRest(@PathVariable("id") Long Id) {    
