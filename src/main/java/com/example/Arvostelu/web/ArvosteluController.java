@@ -56,12 +56,7 @@ public class ArvosteluController {
 	        return "redirect:arvostelut";
 	        
 	    }
-		
-	    @RequestMapping(value="/arvostelulista", method = RequestMethod.GET)
-	    public @ResponseBody List<Arvostelu> reviewListRest() {	
-	        return (List<Arvostelu>) repository.findAll();
-	    } 
-	   
+
 	    
 	    @PreAuthorize("hasAuthority('ADMIN')")
 	    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
@@ -73,7 +68,7 @@ public class ArvosteluController {
 
 	    @RequestMapping(value="/modify/{id}")
 	    public String editReview(@PathVariable("id") Long arvosteluId, Model model) {
-	        model.addAttribute("arvostelu", repository.findById(arvosteluId));
+	        
 	        model.addAttribute("categories", crepository.findAll());
 	        return "modifyreview";
 	    }
