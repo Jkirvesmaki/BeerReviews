@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.Arvostelu.model.Arvostelu;
 import com.example.Arvostelu.model.ArvosteluRepository;
 import com.example.Arvostelu.model.CategoryRepository;
+import com.example.guitarChords.model.Chord;
 
 
 
@@ -35,7 +36,7 @@ public class ArvosteluController {
 	  
 	    @RequestMapping(value="/arvostelut")
 	    public String arvostelut(Model model) {
-	        model.addAttribute("arvostelu", repository.findAll());
+	        model.addAttribute("arvostelut", repository.findAll());
 	        return "arvostelut";
 
 	    }
@@ -55,6 +56,11 @@ public class ArvosteluController {
 	        return "redirect:arvostelut";
 	        
 	    }
+		// RESTful service to get all chords
+	    @RequestMapping(value="/arvostelulista", method = RequestMethod.GET)
+	    public @ResponseBody List<Arvostelu> reviewListRest() {	
+	        return (List<Arvostelu>) repository.findAll();
+	    } 
 	   
 	    
 	    @PreAuthorize("hasAuthority('ADMIN')")
