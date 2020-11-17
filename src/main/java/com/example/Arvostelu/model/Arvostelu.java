@@ -15,7 +15,6 @@ import net.minidev.json.annotate.JsonIgnore;
 @Entity
 public class Arvostelu {
 @Id
-@Column(name= "id")
 @GeneratedValue(strategy=GenerationType.AUTO)
 private Long id;
 private String name;
@@ -43,7 +42,7 @@ public Arvostelu(String name, String description, Double arvosana, Category cate
 }
 
 
-public long getId() {
+public Long getId() {
 
 	return id;
 }
@@ -62,7 +61,7 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
-public double getScore() {
+public Double getScore() {
 	return score;
 }
 public void setScore(Double score) {
