@@ -1,4 +1,4 @@
-/*package com.example.Arvostelu.model;
+package com.example.Arvostelu.model;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -62,5 +62,3 @@ public class SignupForm {
     
     
 }
-
-*/

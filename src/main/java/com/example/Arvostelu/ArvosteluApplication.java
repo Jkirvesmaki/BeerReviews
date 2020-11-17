@@ -32,16 +32,19 @@ public class ArvosteluApplication {
 	
 				log.info("saving a couple reviews");
 				Category category1 = new Category("Lager");
-				crepository.deleteAll();
+				Category category2 = new Category("Pilsner");
+				Category category3 = new Category("IPA");
+				Category category4 = new Category("Ale");
 				crepository.save(category1);
-			
-			
+				crepository.save(category2);
+				crepository.save(category3);
+				crepository.save(category4);
 				log.info("fetch all reviews");
 				User user1 = new User(null, "joonas2", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "ADMIN");
 				User user2 = new User(null, "joonas1", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "user");
 				urepository.deleteAll();
-				  urepository.save(user1);
-		            urepository.save(user2);
+				urepository.save(user1);
+		        urepository.save(user2);
 				for (Arvostelu arvostelu : arepository.findAll()) {
 					log.info(arvostelu.toString());
 				}
