@@ -35,6 +35,7 @@ public class ArvosteluApplication {
 				Category category2 = new Category("Pilsner");
 				Category category3 = new Category("IPA");
 				Category category4 = new Category("Ale");
+				crepository.deleteAll();
 				crepository.save(category1);
 				crepository.save(category2);
 				crepository.save(category3);

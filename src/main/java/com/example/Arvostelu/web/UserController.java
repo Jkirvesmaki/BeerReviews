@@ -1,4 +1,4 @@
-/*package com.example.Arvostelu.web;
+package com.example.Arvostelu.web;
 
 
 
@@ -65,4 +65,4 @@ public class UserController {
     }    
     
 }
-*/
+
