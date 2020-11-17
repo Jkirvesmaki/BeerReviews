@@ -56,7 +56,7 @@ public class ArvosteluController {
 	        return "redirect:arvostelut";
 	        
 	    }
-		// RESTful service to get all chords
+		
 	    @RequestMapping(value="/arvostelulista", method = RequestMethod.GET)
 	    public @ResponseBody List<Arvostelu> reviewListRest() {	
 	        return (List<Arvostelu>) repository.findAll();
