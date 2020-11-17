@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.Arvostelu.model.Arvostelu;
 import com.example.Arvostelu.model.ArvosteluRepository;
 import com.example.Arvostelu.model.CategoryRepository;
-import com.example.guitarChords.model.Chord;
+
 
 
 
