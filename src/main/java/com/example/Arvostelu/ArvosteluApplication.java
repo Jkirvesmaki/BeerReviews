@@ -31,10 +31,11 @@ public class ArvosteluApplication {
 				
 	
 				log.info("saving a couple reviews");
+				Category category1 = new Category("Lager");
+				crepository.deleteAll();
+				crepository.save(category1);
 			
-				crepository.save(new Category("Lager"));
 			
-				arepository.save(new Arvostelu("Karhu", "Namskis", 5.0 ,crepository.findByName("Lager").get(0)));
 				log.info("fetch all reviews");
 				User user1 = new User("1", "joonas2", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "ADMIN");
 				User user2 = new User("2", "joonas1", "$2y$12$.yqQrFCmU53msFJLZrSvF.CpbrsUr612Ac3vFblyw.tMW.VwrXsKS", "joonas.kirvesmaki@gmail.com", "user");
