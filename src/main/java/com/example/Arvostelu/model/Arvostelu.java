@@ -1,13 +1,6 @@
 package com.example.Arvostelu.model;
 
 import javax.persistence.*;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-
 
 import net.minidev.json.annotate.JsonIgnore;
 
@@ -15,6 +8,7 @@ import net.minidev.json.annotate.JsonIgnore;
 @Entity
 public class Arvostelu {
 @Id
+@Column(name = "id")
 @GeneratedValue(strategy=GenerationType.AUTO)
 private Long id;
 private String name;

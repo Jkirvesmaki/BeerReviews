@@ -66,7 +66,7 @@ public class ArvosteluController {
 	    
 
 	    @RequestMapping(value="/modify/{id}")
-	    public String editBook(@PathVariable("id") Long arvosteluId, Model model) {
+	    public String editReview(@PathVariable("id") Long arvosteluId, Model model) {
 	        model.addAttribute("arvostelu", repository.findById(arvosteluId));
 	        model.addAttribute("categories", crepository.findAll());
 	        return "modifyreview";
