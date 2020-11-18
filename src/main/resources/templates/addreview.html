@@ -61,9 +61,10 @@ footer {
 </style>
 </head>
 <body>
-<section>
+
 	<a href="/arvostelut">Takaisin arvosteluihin</a>
 	<h1>Lisää arvostelu</h1>
+	<section>
 	<div>
 		<form th:object="${arvostelu}" th:action="@{save}" action="#" method="post">
 			<label for="name">nimi</label> <input type="text" id="name"
