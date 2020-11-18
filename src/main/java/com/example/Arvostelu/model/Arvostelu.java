@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import net.minidev.json.annotate.JsonIgnore;
 
+//tehdään arvostelu luokka
 
 @Entity
 public class Arvostelu {
@@ -74,9 +75,10 @@ public void setCategory(Category category) {
 
 @Override
 public String toString() {
-	
+	if (this.category != null)
 	return "Arvostelu [id=" + id + ", name=" + name + ", description=" + description + ", score=" + score + ", category=" + this.getCategory() + "]";
-	
+	else
+		return "Arvostelu [id=" + id + ", name=" + name + ", description=" + description + ", score=" + score + "]";
 }
 
 

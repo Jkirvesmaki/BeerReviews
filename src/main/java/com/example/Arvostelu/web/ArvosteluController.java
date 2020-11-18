@@ -33,7 +33,8 @@ public class ArvosteluController {
 	        return "login";
 	    }
 		
-	  
+	  //listataan kaikki arvostelut 
+	    
 	    @RequestMapping(value="/arvostelut")
 	    public String arvostelut(Model model) {
 	        model.addAttribute("arvostelut", repository.findAll());
@@ -43,13 +44,17 @@ public class ArvosteluController {
 	    @RequestMapping(value="/api/{id}", method = RequestMethod.GET)
 	    public @ResponseBody Optional<Arvostelu> findArvosteluRest(@PathVariable("id") Long Id) {    
 	        return repository.findById(Id);
-	    }      
+	    }  
+	    
+	    //lisätään uusi arvostelu
 	    @RequestMapping(value = "/add")
 	    public String addReview(Model model){
 	        model.addAttribute("arvostelu", new Arvostelu());
 	        model.addAttribute("categories", crepository.findAll());
 	        return "addreview";
 	    }
+	    
+	    
 	    @RequestMapping(value = "/save", method = RequestMethod.POST)
 	    public String save(Arvostelu arvostelu){
 	        repository.save(arvostelu);
@@ -57,7 +62,7 @@ public class ArvosteluController {
 	        
 	    }
 
-	    
+	    //jos käyttäjällä on admin oikeudet pystyy hän poistamaan tietokannasta tietoja
 	    @PreAuthorize("hasAuthority('ADMIN')")
 	    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	    public String deleteBook(@PathVariable("id") Long arvosteluId, Model model) {
@@ -65,10 +70,10 @@ public class ArvosteluController {
 	    	return"redirect:../arvostelut";
 	    	} 
 	    
-
+	    //arvosteluiden muokkaus
 	    @RequestMapping(value="/modify/{id}")
 	    public String editReview(@PathVariable("id") Long arvosteluId, Model model) {
-	        
+	        model.addAttribute("arvostelu", repository.findById(arvosteluId));
 	        model.addAttribute("categories", crepository.findAll());
 	        return "modifyreview";
 	    }

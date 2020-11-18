@@ -5,6 +5,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
     <style>
+    
+    body {
+  	background:  url(
+  	[[@{https://mocah.org/uploads/posts/505930-beer.jpg}]])
+                    no-repeat center center fixed;  
+    }
+    
+    section {
+    
+    display: table;
+    clear: both;
+    background-color: lightgray;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    width: 100%;
+   
+    
+}
     ul {
  	 list-style-type: none;
  	 margin: 20px;
@@ -40,8 +59,13 @@ footer {
 }
 </style>
 </head>
+ 
 <body>
 	<h1>Olut-arvostelut</h1>
+	
+	<section>
+
+	
     <table class="table table-striped"> 
 		<tr>
 		    <th>nimi</th>
@@ -49,7 +73,7 @@ footer {
 		    <th>arvosana</th>
 
 		        <th>Category</th>
-		        </div>
+		       
 	<div class="col-md-4">
 		   <h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
 		   <form th:action="@{/logout}" method="post" >
@@ -57,24 +81,26 @@ footer {
 		   			class="btn btn-warning"/>
 		   			</form>
 
-		   			
+		   			 </div>
 		   			<br></br>
-		    <th></th>
+		    
 		    
 		</tr>  
+		
     	<tr th:each = "arvostelu : ${arvostelut}">
     		<td th:text="${arvostelu.name}"></td> 
     		<td th:text="${arvostelu.description}"></td>
-    		<td th:text="${arvostelu.score}"></td>  		
-    	
+    		<td th:text="${arvostelu.score}"></td>  		    	
     		 <td th:text="${arvostelu.category.name}"></td> 
-
-
-			
     		<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${arvostelu.id})}"  class="btn btn-danger">Delete</a></td>    		
     		<td><a th:href="@{/modify/{id}(id=${arvostelu.id})}"  class="btn btn-warning">Modify</a></td>    
+    		
     	</tr>
      </table> 	
+   
+    
      <a href="/add" class="btn btn-success">Lisaa arvostelu</a>
+      <br></br>
+    </section>
 </body>
 </html>
