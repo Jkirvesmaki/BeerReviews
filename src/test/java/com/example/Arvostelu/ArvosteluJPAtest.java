@@ -29,6 +29,7 @@ public class ArvosteluJPAtest {
 }
 
 	@Test
+	
 
 	public void createNewArvostelu(){
 		List<Arvostelu> arvostelut = repository.findByName("Karhu");
